@@ -1,0 +1,94 @@
+<div class="container">
+    
+  <div class="ad-editor {{main.currentEditingWidth}}">
+  
+    <!-- Select responsive width to edit -->
+    <div class="width-selector-ui">
+      <ul>
+        <li>
+          <a ng-click="main.setEditingWidth(0)" ng-class="{'active' : main.currentEditingWidth === 'small'}">
+            <span ng-if="main.currentEditingWidth === 'small'"><i class="fa fa-edit"></i>Editing </span>Small Width<br/><label>(250px-399px images)</label>
+          </a>
+        </li>
+        <li>
+          <a ng-click="main.setEditingWidth(1)" ng-class="{'active' : main.currentEditingWidth === 'medium'}">
+            <span ng-if="main.currentEditingWidth === 'medium'"><i class="fa fa-edit"></i>Editing </span>Medium Width<br/><label>(400px-599px images)</label>
+          </a>
+        </li>
+        <li>
+          <a ng-click="main.setEditingWidth(2)" ng-class="{'active' : main.currentEditingWidth === 'large'}">
+            <span ng-if="main.currentEditingWidth === 'large'"><i class="fa fa-edit"></i>Editing </span>Large Width<br/><label>(600px+ images)</label>
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- Preview area -->
+    <div class="preview-area studio">
+      <i class="fa fa-picture-o"></i>
+      <div class="ad-preview">
+        <div class="ad-content">
+          <div class="tile"></div>
+          <div class="clear"></div>
+          <div class="main align-{{main.currentAd.widths[main.currentEditingWidth].align}}">
+            <div class="logo">Logo Area</div>
+            <div class="slogan">Slogan Area</div>
+            <div class="cta">CTA Area</div>
+          </div>
+        </div>
+        <div class="info-button {{main.currentAd.widths[main.currentEditingWidth].buttonAlign}}"></div>
+        <div class="close-button {{main.currentAd.widths[main.currentEditingWidth].buttonAlign}}"></div>
+      </div>
+    </div>
+    
+    <!-- Alignment UI -->
+    <div class="current-width-alignment-ui">
+      <label>Align ad content:</label>
+      <div class="slider-holder">
+        <div class="slider {{main.currentAd.widths[main.currentEditingWidth].align}}"></div>
+      </div>
+      <ul>
+        <li>
+          <a ng-click="main.alignAd('left')" ng-class="{'active' : main.currentAd.widths[main.currentEditingWidth].align === 'left'}">
+            <span ng-if="main.currentAd.widths[main.currentEditingWidth].align === 'left'"><b>Aligned</b> </span>Left
+          </a>
+        </li>
+        <li>
+          <a ng-click="main.alignAd('center')" ng-class="{'active' : main.currentAd.widths[main.currentEditingWidth].align === 'center'}">
+            <span ng-if="main.currentAd.widths[main.currentEditingWidth].align === 'center'"><b>Aligned</b> </span>Center
+          </a>
+        </li>
+        <li>
+          <a ng-click="main.alignAd('right')" ng-class="{'active' : main.currentAd.widths[main.currentEditingWidth].align === 'right'}">
+            <span ng-if="main.currentAd.widths[main.currentEditingWidth].align === 'right'"><b>Aligned</b> </span>Right
+          </a>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    
+    <!-- Close and Info Alignment UI -->
+    <div class="close-info-alignment-ui">
+      <label>Align Close and Info buttons:</label>
+      <div class="slider-holder">
+        <div class="slider {{main.currentAd.widths[main.currentEditingWidth].buttonAlign}}"></div>
+      </div>
+      <ul>
+        <li>
+          <a ng-click="main.alignButtons('left')" ng-class="{'active' : main.currentAd.widths[main.currentEditingWidth].buttonAlign === 'left'}">
+            <span ng-if="main.currentAd.widths[main.currentEditingWidth].buttonAlign === 'left'"><b>Aligned</b> </span>Left
+          </a>
+        </li>
+        <li>
+          <a ng-click="main.alignButtons('right')" ng-class="{'active' : main.currentAd.widths[main.currentEditingWidth].buttonAlign === 'right'}">
+            <span ng-if="main.currentAd.widths[main.currentEditingWidth].buttonAlign === 'right'"><b>Aligned</b> </span>Right
+          </a>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    
+    <!-- <pretty-json json="main.currentAd"></pretty-json> -->
+  
+  </div><!-- /.ad-editor -->
+</div><!-- /.container -->
