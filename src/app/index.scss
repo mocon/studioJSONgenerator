@@ -190,7 +190,7 @@ $inscreen-ad-height:    100px;
     }
     .info-button {
       background-image: url('../assets/images/info.svg');
-      background-size: 22px 22px;
+      background-size: 20px 20px;
       
       &.right {
         right: 35px;
@@ -363,7 +363,7 @@ $inscreen-ad-height:    100px;
   }
 }
 
-pre.pretty-json {
+pre {
   outline: none;
   margin: 0 auto;
   @extend .animate;

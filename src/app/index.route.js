@@ -3,6 +3,12 @@
 
   angular
     .module('simpleAdbuilder')
+    .filter('printJson', function(){
+      return function(input){
+        var output = angular.toJson(input, true);
+        return output;
+      }
+    })
     .config(routerConfig);
 
   /** @ngInject */
